@@ -18,11 +18,8 @@ class PagSeguroConfigWrapper {
         $PagSeguroConfig['log']['active']       = false;
         $PagSeguroConfig['log']['fileLocation'] = Configs::$configs['pagseguro']['logs'];
         return $PagSeguroConfig;
-        echo "oi";
     }
 }
-
-
 
 class CreatePaymentRequest {
     public function main(){
@@ -127,8 +124,7 @@ class CreatePaymentRequest {
         }
     }
 
-    public static function printPaymentUrl($url)
-    {
+    public static function printPaymentUrl($url){
         if ($url) {
             echo "<h2>Criando requisi&ccedil;&atilde;o de pagamento</h2>";
             echo "<p>URL do pagamento: <strong>$url</strong></p>";
@@ -153,28 +149,5 @@ class NotificationListener {
                 die($e->getMessage());
             }
         }
-
     }
-        /*
-        print_r($_POST);
-        if(isset($_POST['notificationCode']) && $_POST['notificationType'] == 'transaction'){
-            $email = Configs::$configs['pagseguro']['email'];
-            $token = Configs::$configs['pagseguro']['token'];
-            $url   = 'https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
-            //$url   = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
-            echo $url;
-            $curl  = curl_init($url);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            $transaction = curl_exec($curl);
-            curl_close($curl);
-            if($transaction == 'Unauthorized'){
-                echo "Erro - Unauthorized";
-                exit;
-            }
-            $transaction = simplexml_load_string($transaction);
-            print_r($transaction);
-        }
-        */
-    //}
 }
