@@ -140,7 +140,8 @@ class NotificationListener {
         if(isset($_POST['notificationCode']) && $_POST['notificationType'] == 'transaction'){
             $email = Configs::$configs['pagseguro']['email'];
             $token = Configs::$configs['pagseguro']['token'];
-            $url   = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
+            $url   = 'https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
+            //$url   = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
             echo $url;
             $curl  = curl_init($url);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
