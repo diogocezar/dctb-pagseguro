@@ -136,10 +136,12 @@ class CreatePaymentRequest {
 
 class NotificationListener {
     public static function main(){
-        if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
+        print_r($_POST);
+        if(isset($_POST['notificationCode']) && $_POST['notificationType'] == 'transaction'){
             $email = Configs::$configs['pagseguro']['email'];
             $token = Configs::$configs['pagseguro']['token'];
             $url   = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
+            echo $url;
             $curl  = curl_init($url);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
