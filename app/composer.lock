@@ -1,0 +1,53 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "724746d9b15c298863786bbbbfb790d5",
+    "content-hash": "3ecae6de9cd19fe0314ec4b2ca0eec7d",
+    "packages": [
+        {
+            "name": "pagseguro/php",
+            "version": "2.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pagseguro/php.git",
+                "reference": "1c956e609acdef2dd7a37ece5cb5d13e7fc672a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pagseguro/php/zipball/1c956e609acdef2dd7a37ece5cb5d13e7fc672a0",
+                "reference": "1c956e609acdef2dd7a37ece5cb5d13e7fc672a0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "lib-curl": "*",
+                "lib-libxml": "*",
+                "lib-openssl": "*",
+                "php": ">=5.4.27"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "source/PagSeguroLibrary"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache License 2.0"
+            ],
+            "description": "Biblioteca de integração com o PagSeguro",
+            "time": "2016-01-28 20:17:46"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
