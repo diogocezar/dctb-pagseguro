@@ -22,7 +22,6 @@ class PagSeguroConfigWrapper {
 }
 
 class CreatePaymentRequest {
-
     public function main(){
         // Instantiate a new payment request
         $paymentRequest = new PagSeguroPaymentRequest();
